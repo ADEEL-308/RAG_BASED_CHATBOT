@@ -93,7 +93,6 @@ def process_new_pdf(file_path):
         return
 
     db.add_documents(chunks)
-    db.persist()
     global qa_chain
     qa_chain = get_qa_chain()
     print(f"✅ Added {file_path} to Chroma DB and refreshed retriever.")
